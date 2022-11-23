@@ -31,7 +31,12 @@ body:
         - 'No'
     validations:
       required: true
-
+      
+  - type: input
+    id: testcase-id
+    attributes:
+      label: Please provide a link to a the testcase
+      
   - type: textarea
     id: description
     attributes:
@@ -39,10 +44,10 @@ body:
     validations:
       required: true
 
-  - type: input
+  - type: textarea
     id: reproduction
     attributes:
-      label: Please provide a link to a minimal reproduction of the bug
+      label: Please provide steps for reproduction of the bug
 
   - type: textarea
     id: exception-or-error
