@@ -21,6 +21,16 @@ body:
         - 'No'
     validations:
       required: true
+      
+  - type: dropdown
+    id: is-reproducible
+    attributes:
+      label: Is the observed behavior reproducible?
+      options:
+        - 'Yes'
+        - 'No'
+    validations:
+      required: true
 
   - type: textarea
     id: description
@@ -43,7 +53,7 @@ body:
   - type: textarea
     id: environment
     attributes:
-      label: Please provide the environment you discovered this bug in (run `ng version`)
+      label: Please provide the environment you discovered this bug in
       render: true
 
   - type: textarea
