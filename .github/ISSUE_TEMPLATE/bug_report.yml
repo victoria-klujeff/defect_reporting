@@ -45,7 +45,6 @@ body:
     attributes:
       label: Please provide the environment you discovered this bug in (run `ng version`)
       render: true
-      placeholder: |
 
   - type: textarea
     id: other
