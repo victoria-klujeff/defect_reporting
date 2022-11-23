@@ -7,32 +7,89 @@ assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+name: Bug Report
+description: Report a bug in the Angular Framework
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+body:
+  - type: dropdown
+    id: affected-packages
+    attributes:
+      label: Which @angular/* package(s) are the source of the bug?
+      options:
+        - animations
+        - bazel
+        - common
+        - compiler-cli
+        - compiler
+        - core
+        - elements
+        - forms
+        - language-service
+        - localize
+        - platform-browser-dynamic
+        - platform-browser
+        - platform-server
+        - router
+        - service-worker
+        - upgrade
+        - zone.js
+        - Don't known / other
+      multiple: true
+    validations:
+      required: true
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+  - type: dropdown
+    id: is-regression
+    attributes:
+      label: Is this a regression?
+      options:
+        - 'Yes'
+        - 'No'
+    validations:
+      required: true
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+    validations:
+      required: true
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+  - type: input
+    id: reproduction
+    attributes:
+      label: Please provide a link to a minimal reproduction of the bug
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+  - type: textarea
+    id: exception-or-error
+    attributes:
+      label: Please provide the exception or error you saw
+      render: true
 
-**Additional context**
-Add any other context about the problem here.
+  - type: textarea
+    id: environment
+    attributes:
+      label: Please provide the environment you discovered this bug in (run `ng version`)
+      render: true
+      placeholder: |
+        Angular CLI: 12.0.5
+        Node: 14.17.0
+        Package Manager: yarn 1.22.10
+        OS: linux x64
+
+        Angular: 12.0.5
+        ... animations, cli, common, compiler, compiler-cli, core, forms
+        ... platform-browser, platform-browser-dynamic, router
+
+        Package                         Version
+        ---------------------------------------------------------
+        @angular-devkit/architect       0.1200.5
+        @angular-devkit/build-angular   12.0.5
+        @angular-devkit/core            12.0.5
+        rxjs                            6.6.7
+        typescript                      4.2.4
+
+  - type: textarea
+    id: other
+    attributes:
+      label: Anything else?
